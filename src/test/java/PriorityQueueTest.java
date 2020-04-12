@@ -24,10 +24,10 @@ class PriorityQueueTest {
     void testWithArrayOfStrings(String arg) {
         String[] arrayParam = arg.split("\\s*,\\s*");
         PriorityQueue<String> pqueueParam = new PriorityQueue<>(Arrays.asList(arrayParam));
-        Arrays.sort(arrayParam);
+        //Arrays.sort(arrayParam);
         for(String param : arrayParam){
             String queuePoll = pqueueParam.poll();
-            assertEquals(queuePoll, param);
+            assertEquals(param, queuePoll);
         }
 
     }
