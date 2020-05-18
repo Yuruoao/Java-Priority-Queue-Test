@@ -8,6 +8,16 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PriorityQueueTest {
+    @Test
+    void testWithInt() {
+        List<Integer> inputParam = Arrays.asList(5, 6, 2);
+        int[] expectedParam = {2, 5, 6};
+        PriorityQueue<Integer> pQueueParam = new PriorityQueue<>(inputParam);
+        for(int param : expectedParam){
+            int queuePoll = pQueueParam.poll();
+            assertEquals(param, queuePoll);
+        }
+    }
 
     private static Stream<Arguments> provideStringsForPriorityQueue() {
         return Stream.of(
@@ -22,28 +32,28 @@ class PriorityQueueTest {
     void testWithArrayOfStrings(String input, String expected) {
         String[] inputParam = input.split("\\s*,\\s*");
         String[] expectedParam = expected.split("\\s*,\\s*");
-        PriorityQueue<String> pqueueParam = new PriorityQueue<>(Arrays.asList(inputParam));
+        PriorityQueue<String> pQueueParam = new PriorityQueue<>(Arrays.asList(inputParam));
         for(String param : expectedParam){
-            String queuePoll = pqueueParam.poll();
+            String queuePoll = pQueueParam.poll();
             assertEquals(param, queuePoll);
         }
     }
 
     @Test
-    public void addElementIsNull() {
+    void addElementIsNull() {
         PriorityQueue queue = new PriorityQueue();
         assertThrows(NullPointerException.class, () -> {
             queue.add(null);
         });
     }
     @Test
-    public void constructorInitialCapacityIsZero() {
+    void constructorInitialCapacityIsZero() {
         assertThrows(IllegalArgumentException.class, () -> {
             new PriorityQueue(0);
         });
     }
     @Test
-    public void iteratorNextAEmptyQueue(){
+    void iteratorNextAEmptyQueue(){
         PriorityQueue queue = new PriorityQueue();
         assertThrows(java.util.NoSuchElementException.class, () -> {
             queue.iterator().next();
