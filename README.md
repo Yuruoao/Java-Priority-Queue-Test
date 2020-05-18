@@ -1,2 +1,2 @@
-# 0856517
-[![Build Status](https://travis-ci.com/Yuruoao/0856517.svg?branch=master)](https://travis-ci.com/Yuruoao/0856517)
+# Java Priority Queue Test
+[![Build Status](https://travis-ci.com/Yuruoao/java-priority-queue-test.svg?branch=test-case)](https://travis-ci.com/Yuruoao/java-priority-queue-test)
